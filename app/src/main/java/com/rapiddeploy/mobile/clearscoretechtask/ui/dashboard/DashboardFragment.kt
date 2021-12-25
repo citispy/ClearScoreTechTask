@@ -1,5 +1,7 @@
 package com.rapiddeploy.mobile.clearscoretechtask.ui.dashboard
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -50,6 +52,8 @@ class DashboardFragment : Fragment() {
 
         if (apiCallSuccessful) {
             updateText(creditReportInfo!!)
+        } else {
+            displayErrorDialog()
         }
     }
 
@@ -59,6 +63,9 @@ class DashboardFragment : Fragment() {
         if (apiCallSuccessful) {
             binding.textContainer.visibility = View.VISIBLE
             binding.doughnut.visibility = View.VISIBLE
+        } else {
+            binding.textContainer.visibility = View.GONE
+            binding.doughnut.visibility = View.GONE
         }
     }
 
@@ -69,5 +76,15 @@ class DashboardFragment : Fragment() {
 
         binding.textScore.text = score
         binding.textOutOf.text = scoreOutOf
+    }
+
+    private fun displayErrorDialog() {
+        AlertDialog.Builder(requireActivity()).setTitle(getString(R.string.dialog_title))
+            .setMessage(getString(R.string.dialog_message))
+            .setPositiveButton(getString(R.string.retry)) { _, _ ->
+                creditDetailsViewModel.getCreditDetails()
+            }
+            .setCancelable(false)
+            .show()
     }
 }

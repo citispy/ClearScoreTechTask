@@ -14,12 +14,16 @@ class CreditDetailsViewModel @Inject constructor() : ViewModel() {
     val creditReportInfo = Transformations.map(creditDetails) { it?.creditReportInfo }
 
     val doughnutProgress = Transformations.map(creditReportInfo) {
-        val score = it?.score?.toDouble()
-        val maxScore = it?.maxScoreValue?.toDouble()
-        ((score!! / maxScore!!) * 100).toInt()
+            val score = it?.score?.toDouble() ?: 0.0
+            val maxScore = it?.maxScoreValue?.toDouble() ?: 0.0
+            ((score / maxScore) * 100).toInt()
+    }
+
+    fun getCreditDetails() {
+        Repository.getCreditDetails()
     }
 
     init {
-        Repository.getCreditDetails()
+        getCreditDetails()
     }
 }

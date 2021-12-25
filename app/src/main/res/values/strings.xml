@@ -2,4 +2,7 @@
     <string name="app_name">ClearScoreTechTask</string>
     <string name="your_credit_score_is">Your credit score is</string>
     <string name="score_out_of">out of %1$s</string>
+    <string name="dialog_title">Something went wrong</string>
+    <string name="dialog_message">You are no longer connected to the Internet. Please connect and try again.</string>
+    <string name="retry">Retry</string>
 </resources>
