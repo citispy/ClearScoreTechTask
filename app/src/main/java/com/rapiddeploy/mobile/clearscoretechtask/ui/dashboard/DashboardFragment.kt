@@ -30,17 +30,17 @@ class DashboardFragment : Fragment() {
     }
 
     private fun observeViewModel() {
-        observeCreditReportInfo(creditDetailsViewModel)
-        observeDoughnutProgress(creditDetailsViewModel)
+        observeCreditReportInfo()
+        observeDoughnutProgress()
     }
 
-    private fun observeCreditReportInfo(creditDetailsViewModel: CreditDetailsViewModel) {
+    private fun observeCreditReportInfo() {
         creditDetailsViewModel.creditReportInfo.observe(this, { creditReportInfo ->
             updateUi(creditReportInfo)
         })
     }
 
-    private fun observeDoughnutProgress(creditDetailsViewModel: CreditDetailsViewModel) {
+    private fun observeDoughnutProgress() {
         creditDetailsViewModel.doughnutProgress.observe(this, { doughnutProgress ->
             binding.doughnut.progress = doughnutProgress
         })
@@ -82,9 +82,14 @@ class DashboardFragment : Fragment() {
         AlertDialog.Builder(requireActivity()).setTitle(getString(R.string.dialog_title))
             .setMessage(getString(R.string.dialog_message))
             .setPositiveButton(getString(R.string.retry)) { _, _ ->
-                creditDetailsViewModel.getCreditDetails()
+                onRetryClicked()
             }
             .setCancelable(false)
             .show()
+    }
+
+    private fun onRetryClicked() {
+        binding.loadingProgress.visibility = View.VISIBLE
+        creditDetailsViewModel.getCreditDetails()
     }
 }
