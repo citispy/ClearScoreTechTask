@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ClearScoreTechTask</string>
+    <string name="your_credit_score_is">Your credit score is</string>
+    <string name="score_out_of">out of %1$s</string>
+</resources>
