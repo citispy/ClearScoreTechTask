@@ -1,12 +1,13 @@
 package com.rapiddeploy.mobile.clearscoretechtask.ui.dashboard
 
 import com.rapiddeploy.mobile.clearscoretechtask.http.support.WebRequestManager
+import javax.inject.Inject
 
-object Repository {
-    val creditResponse = WebRequestManager.creditResponse
+class Repository @Inject constructor(private val webRequestManager: WebRequestManager) {
+    val creditResponse = webRequestManager.creditResponse
 
     fun getCreditDetails() {
         // TODO: Get credit details from api or Room implementation
-        WebRequestManager.getCreditDetails()
+        webRequestManager.getCreditDetails()
     }
 }

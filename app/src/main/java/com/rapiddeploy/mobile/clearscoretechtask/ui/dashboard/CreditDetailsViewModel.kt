@@ -7,9 +7,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class CreditDetailsViewModel @Inject constructor() : ViewModel() {
+class CreditDetailsViewModel @Inject constructor(private val repository: Repository) : ViewModel() {
 
-    private val creditDetails = Repository.creditResponse
+    private val creditDetails = repository.creditResponse
 
     val creditReportInfo = Transformations.map(creditDetails) { it?.creditReportInfo }
 
@@ -20,7 +20,7 @@ class CreditDetailsViewModel @Inject constructor() : ViewModel() {
     }
 
     fun getCreditDetails() {
-        Repository.getCreditDetails()
+        repository.getCreditDetails()
     }
 
     init {

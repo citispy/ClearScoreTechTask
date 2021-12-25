@@ -5,8 +5,9 @@ import com.rapiddeploy.mobile.clearscoretechtask.http.model.CreditResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-object WebRequestManager {
+class WebRequestManager @Inject constructor() {
 
     val creditResponse = MutableLiveData<CreditResponse?>()
 
