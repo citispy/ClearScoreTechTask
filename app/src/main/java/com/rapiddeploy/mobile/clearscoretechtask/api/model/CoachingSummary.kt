@@ -1,4 +1,4 @@
-package com.rapiddeploy.mobile.clearscoretechtask.http.model
+package com.rapiddeploy.mobile.clearscoretechtask.api.model
 
 import com.google.gson.annotations.SerializedName
 import com.google.gson.annotations.Expose

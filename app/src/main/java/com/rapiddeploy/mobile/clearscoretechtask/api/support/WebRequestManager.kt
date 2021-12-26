@@ -1,7 +1,7 @@
-package com.rapiddeploy.mobile.clearscoretechtask.http.support
+package com.rapiddeploy.mobile.clearscoretechtask.api.support
 
 import androidx.lifecycle.MutableLiveData
-import com.rapiddeploy.mobile.clearscoretechtask.http.model.CreditResponse
+import com.rapiddeploy.mobile.clearscoretechtask.api.model.CreditResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

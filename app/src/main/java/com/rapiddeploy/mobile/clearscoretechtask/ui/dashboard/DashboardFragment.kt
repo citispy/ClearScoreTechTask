@@ -1,7 +1,6 @@
 package com.rapiddeploy.mobile.clearscoretechtask.ui.dashboard
 
 import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,7 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import com.rapiddeploy.mobile.clearscoretechtask.R
-import com.rapiddeploy.mobile.clearscoretechtask.http.model.CreditReportInfo
+import com.rapiddeploy.mobile.clearscoretechtask.api.model.CreditReportInfo
 import com.rapiddeploy.mobile.clearscoretechtask.databinding.FragmentDashboardBinding
 import dagger.hilt.android.AndroidEntryPoint
 

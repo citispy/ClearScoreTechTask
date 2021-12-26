@@ -1,4 +1,4 @@
-package com.rapiddeploy.mobile.clearscoretechtask.http.support
+package com.rapiddeploy.mobile.clearscoretechtask.api.support
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

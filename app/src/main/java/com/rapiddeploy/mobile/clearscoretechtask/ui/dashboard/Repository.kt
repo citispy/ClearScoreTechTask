@@ -1,6 +1,6 @@
 package com.rapiddeploy.mobile.clearscoretechtask.ui.dashboard
 
-import com.rapiddeploy.mobile.clearscoretechtask.http.support.WebRequestManager
+import com.rapiddeploy.mobile.clearscoretechtask.api.support.WebRequestManager
 import javax.inject.Inject
 
 class Repository @Inject constructor(private val webRequestManager: WebRequestManager) {
