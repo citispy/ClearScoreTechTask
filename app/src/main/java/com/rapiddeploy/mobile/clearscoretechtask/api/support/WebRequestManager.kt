@@ -12,8 +12,7 @@ class WebRequestManager @Inject constructor() {
     val creditResponse = MutableLiveData<CreditResponse?>()
 
     fun getCreditDetails() {
-        val service = ApiService.retrofit.create(CreditInterface::class.java)
-        val call = service.getCreditInfo()
+        val call = ApiService.apiInterface.getCreditDetails()
         call.enqueue(object : Callback<CreditResponse> {
             override fun onResponse(call: Call<CreditResponse>, response: Response<CreditResponse>) {
                 creditResponse.value = response.body()

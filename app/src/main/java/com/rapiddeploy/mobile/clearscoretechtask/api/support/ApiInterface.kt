@@ -4,7 +4,7 @@ import com.rapiddeploy.mobile.clearscoretechtask.api.model.CreditResponse
 import retrofit2.Call
 import retrofit2.http.GET
 
-interface CreditInterface {
+interface ApiInterface {
     @GET("endpoint.json")
-    fun getCreditInfo() : Call<CreditResponse>
+    fun getCreditDetails() : Call<CreditResponse>
 }
