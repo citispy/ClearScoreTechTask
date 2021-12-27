@@ -16,12 +16,13 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class DashboardFragment : Fragment() {
 
-    private lateinit var binding : FragmentDashboardBinding
+    private lateinit var binding: FragmentDashboardBinding
     private val creditDetailsViewModel: CreditDetailsViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View {
+        savedInstanceState: Bundle?
+    ): View {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_dashboard, container, false)
         observeViewModel()
@@ -56,16 +57,12 @@ class DashboardFragment : Fragment() {
         }
     }
 
-    private fun updateVisibility(apiCallSuccessful : Boolean) {
+    private fun updateVisibility(apiCallSuccessful: Boolean) {
         binding.loadingProgress.visibility = View.GONE
 
-        if (apiCallSuccessful) {
-            binding.textContainer.visibility = View.VISIBLE
-            binding.doughnut.visibility = View.VISIBLE
-        } else {
-            binding.textContainer.visibility = View.GONE
-            binding.doughnut.visibility = View.GONE
-        }
+        val visibility = if (apiCallSuccessful) View.VISIBLE else View.GONE
+        binding.textContainer.visibility = visibility
+        binding.doughnut.visibility = visibility
     }
 
     private fun updateText(creditReportInfo: CreditReportInfo) {
