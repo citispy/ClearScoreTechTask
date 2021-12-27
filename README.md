@@ -21,7 +21,7 @@ I tried to use as much techical approaches that are recommended by Google. Some 
 - JUnit4, Android Test Library, Android Architecture Components Core Test Library, and Robolectric for writing unit tests
 
 ## What I would've done differently if I had more time
-- My Mock Web Server is making an actual api call. I would change that because making api calls in a unit test slows the test down
+- My Mock Web Server is making an actual api call. I would change that because making api calls in a unit test it down
 - I would implement Okhttp for logging to logcat
 - I would implement Room for caching data so that I wouldn't have to make an api call every time the app starts
 - I would add a MediatorLiveData to my Repository, and add a Room LiveData and API LiveData as a source so that if the Room LiveData is null, I could make an API call
