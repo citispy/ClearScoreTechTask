@@ -21,15 +21,18 @@ I tried to use as much techical approaches that are recommended by Google. Some 
 - JUnit4, Android Test Library, Android Architecture Components Core Test Library, and Robolectric for writing unit tests
 
 ## What I would've done differently if I had more time
-- My Mock Web Server is making an actual api call. I would change that because making api calls in a unit test it down
+- My Mock Web Server is making an actual api call. I would change that because making api calls in a unit test slows it down
 - I would implement Okhttp for logging to logcat
 - I would implement Room for caching data so that I wouldn't have to make an api call every time the app starts
 - I would add a MediatorLiveData to my Repository, and add a Room LiveData and API LiveData as a source so that if the Room LiveData is null, I could make an API call
 - I would obfuscate the code with Proguard to protect the codebase
 - I would add Leak Canary to the app to notify me of any memory leaks
 - I would implement better error handling for my API call by taking into account failed responses or the type of throwable that is thrown in the onFailure method
-- I would check if the device has an internet connection before making a api call
+- I would add a unit test for testing failed responses
+- I would create Instrumentation tests
+- I would check if the device has an internet connection before making an API call
 - I would extract library version numbers in app.gradle because some libraries share version numbers and it's nice to be able to update multiple libraries in one place
 - I would create styles for my views
 - I would test the app on devices of different screen sizes
 - I would extract colors and dimensions into their respective files
+- I would make use of Coroutines
