@@ -31,7 +31,7 @@ I tried to use as much techical approaches that are recommended by Google. Some 
 - I would add a unit test for testing failed responses
 - I would create Instrumentation tests
 - I would check if the device has an internet connection before making an API call
-- I would extract library version numbers in app.gradle because some libraries share version numbers and it's nice to be able to update multiple libraries in one place
+- I would extract library version numbers in build.gradle because some libraries share version numbers and it's nice to be able to update multiple libraries in one place
 - I would create styles for my views
 - I would test the app on devices of different screen sizes
 - I would extract colors and dimensions into their respective files
